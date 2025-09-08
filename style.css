@@ -127,6 +127,80 @@ header nav ul li a:hover {
 
 
 
+/* -------------------------------
+   ページ全体のフォント統一
+---------------------------------*/
+body {
+  font-family: "Times New Roman", serif; /* 全体のフォントを統一 */
+  font-size: 16px; /* 基本文字サイズ */
+  color: #000; /* 基本文字色 */
+  line-height: 1.5; /* 読みやすさ調整 */
+  margin: 0;
+  padding: 0;
+}
+
+/* -------------------------------
+   動画上テキスト（heroセクション）
+---------------------------------*/
+.overlay h1 {
+  font-family: "Times New Roman", serif; /* 動画上も統一 */
+  font-size: 1.8rem; /* 少し小さめで上品に */
+  font-weight: 700;
+  color: white;
+  letter-spacing: 1.5px; /* 高級感のある間隔 */
+  line-height: 1.2; /* 縦間隔調整 */
+  text-align: center; /* 中央寄せ */
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5); /* 背景動画に埋もれないように */
+  transition: all 0.3s ease; /* ホバーなどに対応 */
+}
+
+/* ホバー時の微調整（任意） */
+.overlay h1:hover {
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+
+/* -------------------------------
+   リンクやボタンもTimes New Romanに統一
+---------------------------------*/
+a, button {
+  font-family: "Times New Roman", serif;
+}
+
+/* -------------------------------
+   レスポンシブ対応（スマホ用）
+---------------------------------*/
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px; /* 基本文字サイズを小さく */
+  }
+
+  .overlay h1 {
+    font-size: 1.4rem; /* 動画上テキストをスマホ用に縮小 */
+    letter-spacing: 1px;
+    line-height: 1.1;
+  }
+
+  a, button {
+    font-size: 14px; /* リンクやボタンも縮小 */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 13px; /* さらに小さいスマホ画面用 */
+  }
+
+  .overlay h1 {
+    font-size: 1.2rem;
+    letter-spacing: 0.8px;
+    line-height: 1.1;
+  }
+
+  a, button {
+    font-size: 13px;
+  }
+}
 
 
 
@@ -199,4 +273,17 @@ header nav ul li a:hover {
   .brand-image img {
     max-width: 100%;
   }
+}
+
+
+
+
+
+
+
+.overlay h1 {
+  font-family: "Times New Roman", serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
 }
