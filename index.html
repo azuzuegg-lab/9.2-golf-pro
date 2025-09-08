@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9.2GOLFPRO - トップページ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header>
+    <nav>
+      <div class="nav-container">
+        <div class="hamburger" id="hamburger">☰</div>
+        <ul id="navMenu">
+          <li><a href="#">ONLINE STORE</a></li>
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="#">EVENT</a></li>
+          <li><a href="#">SHOP</a></li>
+          <li><a href="#">PRO & AMBASSADOR</a></li>
+          <li><a href="#">INTERVIEW</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- メインビジュアル（動画自動再生＆ループ） -->
+  <section class="hero-video">
+    <video id="heroVideo" loop playsinline autoplay muted>
+      <source src="background.mp4" type="video/mp4">
+      お使いのブラウザでは動画を再生できません。
+    </video>
+    <div class="overlay">
+      <h1>技と美が宿る、唯一無二の一足。</h1>
+    </div>
+  </section>
+
+  <!-- JavaScript -->
+  <script>
+    // 動画自動再生（ブラウザがブロックした場合の保険付き）
+    const video = document.getElementById("heroVideo");
+    video.play().catch(() => {
+      video.muted = true;
+      video.play();
+    });
+
+    // ハンバーガーメニュー開閉
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
