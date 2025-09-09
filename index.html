@@ -75,10 +75,12 @@
     <!-- 左側のテキスト -->
     <div class="brand-text">
       <p>皮製品で有名なイタリアのマルケ州で製造。</p>
-      <p>デザイナー兼オーナーのカルロ・キオンナは、プロゴルファーの兄のために履いた瞬間になじむシューズを企画。</p>
+      <p>デザイナー兼オーナーのカルロ・キオンナは、</p>
+      <p>プロゴルファーの兄のために履いた瞬間になじむシューズを企画。</p>
       <p>クラシカルな中にも明るいカラー使いやモード性ある遊び心の高いファッション性が特徴。</p>
       <p>機能性にもこだわり、ソールを徹底的に研究。</p>
-      <p>快適なラウンドをサポートする軽く柔らかいはき心地に加え、イタリアらしいオシャレなデザインを取り揃え、<br>
+      <p>快適なラウンドをサポートする軽く柔らかいはき心地に加え、</p>
+      <p>イタリアらしいオシャレなデザインを取り揃え、</p>
       「ゴルフに人生に彩りを」をコンセプトに展開。</p>
       <p><strong>カルロ・キオンナのインタビュー記事 →</strong></p>
       <p>ゴルフシューズの概念を変える、<br>
@@ -103,6 +105,114 @@
 
 
 
+
+
+<!-- Swiper用CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<style>
+/* カード全体 */
+.product-card {
+  position: relative;
+  height: 400px;           
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+}
+
+/* 画像 */
+.product-card img {
+  height: 100%;           
+  width: auto;            
+  object-fit: contain; 
+  display: block;
+}
+
+/* 文字 */
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Times New Roman', serif;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  background: rgba(0,0,0,0.5);
+  width: 100%;
+  box-sizing: border-box;
+}
+</style>
+
+<section class="product-types">
+  <div class="product-row">
+    <a href="st-andrews.html" class="product-card">
+      <img src="images/st-andrews.jpg" alt="ST.ANDREWS">
+      <div class="caption">ST.ANDREWS</div>
+    </a>
+
+    <a href="ryder-cup.html" class="product-card">
+      <img src="images/ryder-cup.jpg" alt="RYDER CUP">
+      <div class="caption">RYDER CUP</div>
+    </a>
+
+    <a href="mask-nylon.html" class="product-card">
+      <img src="images/mask-nylon.jpg" alt="MASK NYLON">
+      <div class="caption">MASK NYLON</div>
+    </a>
+
+    <a href="fashion.html" class="product-card">
+      <img src="images/fashion.jpg" alt="FASHION">
+      <div class="caption">FASHION</div>
+    </a>
+  </div>
+</section>
+
+<style>
+.product-row {
+  display: flex;
+  justify-content: center; /* 横方向中央寄せ */
+  gap: 0;                   /* 画像間の余白ゼロ */
+}
+
+.product-card {
+  position: relative;
+  height: 700px;
+  width: 600px;             /* 固定幅で揃える */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-card img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Times New Roman', serif;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  background: rgba(0,0,0,0.5);
+  width: 100%;
+  box-sizing: border-box;
+}
+</style>
 
 
 
