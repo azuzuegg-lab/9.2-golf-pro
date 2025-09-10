@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>9.2 GOLF PRO ゴルフシューズの取り扱いに関するご案内</title>
+  <style>
+    :root{
+      --max-width:1100px;
+      --gutter:18px;
+      --bg: #f6f6f6;
+      --card-bg: #fff;
+      --text: #111;
+      --accent: #111;
+      --muted: #666;
+    }
+    *{box-sizing:border-box;}
+    body{
+      font-family: "Times New Roman", Times, serif;
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+    }
+    .container{
+      max-width:var(--max-width);
+      margin:36px auto;
+      padding:0 20px;
+    }
+    header{
+      text-align:center;
+      margin-bottom:32px;
+    }
+    header h1{
+      margin:0 0 16px 0;
+      font-size:30px;
+      font-weight:600;
+      letter-spacing:0.03em;
+    }
+    header .intro-img{
+      width:100%;
+      border-radius:6px;
+      overflow:hidden;
+    }
+    header .intro-img img{
+      width:100%;
+      height:auto;
+      display:block;
+      object-fit:cover;
+    }
+    header h2{
+      margin:36px 0 8px 0;
+      font-size:24px;
+    }
+    header p.lead{
+      margin:0;
+      font-size:14px;
+      color:var(--muted);
+    }
+
+    /* 以下は前回のスタイルと同じ */
+    main{margin-top:22px;display:block;gap:28px;}
+    .features{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:26px;
+    }
+    .feature{background:var(--card-bg);padding:18px;border-radius:6px;box-shadow:0 6px 20px rgba(0,0,0,0.04);}
+    .feature h2{margin:0 0 8px 0;font-size:16px;}
+    .feature p{margin:0;font-size:14px;color:var(--muted);}
+    .hero-img{margin:18px 0;display:block;width:100%;overflow:hidden;border-radius:6px;}
+    .hero-img img{width:100%;height:auto;display:block;object-fit:cover;}
+    .details{margin-top:18px;display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+    .detail-item{background:var(--card-bg);padding:14px 16px;border-radius:6px;box-shadow:0 6px 20px rgba(0,0,0,0.04);}
+    .detail-item h3{margin:0 0 8px 0;font-size:15px;}
+    .detail-item p{margin:0;font-size:14px;color:var(--muted);}
+    .back{margin:32px 0 60px 0;text-align:center;}
+    .back a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(0,0,0,0.08);padding-bottom:2px;font-size:14px;}
+    @media (max-width:900px){
+      .features{grid-template-columns:1fr;}
+      .details{grid-template-columns:1fr 1fr;}
+    }
+    @media (max-width:600px){
+      header h1{font-size:22px;}
+      header h2{font-size:18px;}
+      .features{grid-template-columns:1fr;}
+      .details{grid-template-columns:1fr;}
+      .feature,.detail-item{padding:14px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>9.2 GOLF PRO ゴルフシューズの取り扱いに関するご案内</h1>
+      <div class="intro-img">
+        <img src="images/care-intro.jpg" alt="ゴルフシューズ取り扱いイメージ">
+      </div>
+      <h2>9.2 GOLF PRO ゴルフシューズの特徴</h2>
+      <p class="lead">この商品は、すべて厳選されたイタリア起源の素材でつくられています。</p>
+    </header>
+
+    <main>
+      <!-- 3つの項目 -->
+      <section class="features" aria-label="主要特徴">
+        <article class="feature">
+          <h2>着用時のご注意</h2>
+          <p>ご着用の際には靴ベラをご使用になり、かかと部分に使用されているクッションは、非常にソフトな素材を使用しているので、シワやヨレのないようにご注意ください。また変形や破損、性能低下の原因になるため、靴のかかとは踏みつけないでください。かかとを潰すと足首回りの側が破損します。靴が変形して足当たりを起こす原因にもなりますのでご注意ください。シューズを着脱する際には、バックルや紐を外してからご着用ください。バックルとベルトを調整して足全体がシューズにフィットするようにしてください。</p>
+        </article>
+
+        <article class="feature">
+          <h2>お手入れについて</h2>
+          <p>プレー終了後は、水で湿らせた柔らかい布等でしっかりと汚れを取るようにしてください。必要に応じて、専用のレザークリーナーを使用してください。靴底の汚れは、ブラシなどで丁寧に取り除いてください。レザー部分には、定期的にレザークリームを塗布し、柔らかさと光沢を保ってください。シューズが汚れた場合、速やかに乾いた布で拭き取ってください。濡れた芝生や砂地での使用後は、泥や砂を取り除いてください。</p>
+        </article>
+
+        <article class="feature">
+          <h2>保管方法</h2>
+          <p>使用後は、シューズを風通しの良い場所で陰干ししてください。直射日光や高温多湿の場所での保管はさけてください。シューズの形状を保つためには、シューキーパーの使用をおすすめします。</p>
+        </article>
+      </section>
+
+      <!-- 画像 -->
+      <figure class="hero-img" aria-hidden="false">
+        <img src="images/care-main.jpg" alt="お手入れイメージ画像">
+      </figure>
+
+      <!-- 8項目 -->
+      <section class="details" aria-label="詳細項目">
+        <div class="detail-item"><h3>用途</h3><p>当該シューズはゴルフのために専用設計された製品です。異なる用途でのご使用は、思わぬ怪我や事故を引き起こす可能性があります。</p></div>
+        <div class="detail-item"><h3>フィッティング</h3><p>靴のサイズはあくまでも目安とお考えください。足に合わない靴のご使用はプレーに影響を与えるだけでなく、足の健康を損ない、怪我や事故等を引き起こす原因となります。足に合う靴をお選びいただくためにも、両足で実際に試し履き頂くことを推奨しております。</p></div>
+        <div class="detail-item"><h3>損傷確認</h3><p>ソールに摩耗や亀裂、剥離が確認される場合、靴本体にほつれや破れ、変形がある場合、また靴を履いた時に違和感がある場合はご使用にならず、メーカーにお問い合わせください。</p></div>
+        <div class="detail-item"><h3>靴紐</h3><p>靴紐やベルトは正しく通し、適度に締めてご使用ください。靴紐の締め具合が緩い場合には、捻挫・転倒等を引き起こす可能性がございますので、十分にご注意ください。きつく締めすぎると、血流を妨げたり、足が圧迫され怪我等をする原因や、商品に不具合や破損が発生する原因となります。また、靴紐が長すぎると踏みつけたりして危険ですのでご注意ください。</p></div>
+        <div class="detail-item"><h3>色落ちの可能性</h3><p>シューズ内部のレザーは基本的になめしたトップレザーを使用しております。濃色素材及び天然皮革を使用した靴は現在の染色技術では、多少の色落ちをすることがございます。衣類等への色移りにご注意ください。</p></div>
+        <div class="detail-item"><h3>防水</h3><p>ある程度の撥水性はありますが防水を保証するものではございません。プレー当日が雨の場合は、ご使用しないことを推奨します。</p></div>
+        <div class="detail-item"><h3>経年変化</h3><p>多湿の環境下では特に経年変化を起こし、亀裂、剥離が生じる恐れがございます。この経年変化は使用頻度に関わらず起こる可能性がありますので、ご使用後は湿気を取り除き、風通しの良い場所で乾燥させてから保管してください。</p></div>
+        <div class="detail-item"><h3>製品に関して</h3><p>すべてハンドメイドのため、大量生産の商品とは異なり、個体差がございます。皮製品に関しては、非常にデリケートで柔らかい素材を使用しております。数回ご使用していただきますと、個人の形にフィットしてまいります。</p></div>
+      </section>
+
+      <div class="back">
+        <a href="index.html">← トップページに戻る</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
