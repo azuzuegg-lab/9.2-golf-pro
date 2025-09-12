@@ -1,289 +1,361 @@
-/* --- ヘッダー --- */
-header {
-  width: 100%;
-  padding: 20px 0;
-  background: transparent;
-  position: relative;
-}
-
-/* ナビコンテナを中央寄せ */
-header nav .nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: block;
-  text-align: center;
-}
-
-/* ナビ文字横並び＆間隔広め */
-header nav ul {
-  display: inline-flex;
-  gap: 60px;
-  list-style: none;
-  padding: 0;
+/* リセット */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-header nav ul li a {
-  color: black;
+/* ロゴヘッダー */
+.site-header {
+  background-color: rgba(250, 248, 240, 0.95) !important; /* ナビと同じ半透明ベージュ */
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.site-header .brand-logo img {
+  width: 140px;
+  height: auto;
+}
+
+/* ナビゲーション（スクロール時もついてくる） */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: transparent; /* 背景を透明に変更 */
+  backdrop-filter: none;   /* 背景ぼかしも無効化 */
+  border-bottom: none;     /* 下線も消す */
+  z-index: 1000;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 12px 0;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.navbar a {
   text-decoration: none;
-  font-weight: bold;
-  font-size: 16px;
-  letter-spacing: 3px;
+  color: white; /* 背景が透明なので文字は白が見やすい */
+  font-size: 0.95rem;
+  letter-spacing: 1px;
   transition: color 0.3s;
 }
 
-header nav ul li a:hover {
-  color: gray;
+.navbar a:hover {
+  color: #d4af37; /* ゴールドに変化 */
 }
 
-/* ハンバーガーメニュー */
-.hamburger {
-  display: none;
-  font-size: 24px;
-  cursor: pointer;
+
+
+
+/* ベース */
+body {
+  margin: 0;
+  font-family: "Times New Roman", serif;
+  color: #111;
+  background: #fefcf8; /* 高級感あるアイボリーベージュ */
 }
 
-/* --- スマホ対応 --- */
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-
-  header nav ul {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    background: white;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-  }
-
-  header nav ul.active {
-    display: flex;
-  }
-
-  header nav ul li a {
-    font-size: 14px;
-    letter-spacing: normal;
-  }
-}
-
-/* --- 背景動画 --- */
-.hero-video {
+/* ヒーロー */
+.hero {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.hero-video video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-  z-index: 1;
-}
-
-/* オーバーレイ（動画上の文字） */
-.overlay {
+.hero-video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
+  object-fit: cover;
+  z-index: -1; /* 文字より後ろに表示 */
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
   text-align: center;
-  transition: background 0.3s;
-  z-index: 2;
-}
-
-.hero-video:hover .overlay {
-  background: rgba(0,0,0,0.6);
-}
-
-.overlay h1 {
-  font-size: 2rem;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.hero-video:hover .overlay h1 {
-  opacity: 1;
-}
-
-
-
-
-/* -------------------------------
-   ページ全体のフォント統一
----------------------------------*/
-body {
-  font-family: "Times New Roman", serif; /* 全体のフォントを統一 */
-  font-size: 16px; /* 基本文字サイズ */
-  color: #000; /* 基本文字色 */
-  line-height: 1.5; /* 読みやすさ調整 */
-  margin: 0;
-  padding: 0;
-}
-
-/* -------------------------------
-   動画上テキスト（heroセクション）
----------------------------------*/
-.overlay h1 {
-  font-family: "Times New Roman", serif; /* 動画上も統一 */
-  font-size: 1.8rem; /* 少し小さめで上品に */
-  font-weight: 700;
   color: white;
-  letter-spacing: 1.5px; /* 高級感のある間隔 */
-  line-height: 1.2; /* 縦間隔調整 */
-  text-align: center; /* 中央寄せ */
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.5); /* 背景動画に埋もれないように */
-  transition: all 0.3s ease; /* ホバーなどに対応 */
-}
-
-/* ホバー時の微調整（任意） */
-.overlay h1:hover {
-  font-size: 2rem;
-  letter-spacing: 2px;
-}
-
-/* -------------------------------
-   リンクやボタンもTimes New Romanに統一
----------------------------------*/
-a, button {
   font-family: "Times New Roman", serif;
 }
 
-/* -------------------------------
-   レスポンシブ対応（スマホ用）
----------------------------------*/
-@media screen and (max-width: 768px) {
-  body {
-    font-size: 14px; /* 基本文字サイズを小さく */
-  }
-
-  .overlay h1 {
-    font-size: 1.4rem; /* 動画上テキストをスマホ用に縮小 */
-    letter-spacing: 1px;
-    line-height: 1.1;
-  }
-
-  a, button {
-    font-size: 14px; /* リンクやボタンも縮小 */
-  }
+.hero-text h1 {
+  font-size: 3rem;
+  letter-spacing: 0.05em;
 }
 
-@media screen and (max-width: 480px) {
-  body {
-    font-size: 13px; /* さらに小さいスマホ画面用 */
-  }
-
-  .overlay h1 {
-    font-size: 1.2rem;
-    letter-spacing: 0.8px;
-    line-height: 1.1;
-  }
-
-  a, button {
-    font-size: 13px;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-/* ブランド紹介セクション */
-.brand-section {
-  padding: 80px 10%;
-  background-color: #fff;
+/* ナビゲーション */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: rgba(250, 248, 240, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #d4af37; /* ゴールドライン */
   text-align: center;
+  z-index: 1000;
 }
 
-.brand-title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 50px;
-  line-height: 1.6;
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #111;
+  font-size: 0.95rem;
+  letter-spacing: 1.5px;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #d4af37; /* ゴールドに変化 */
+}
+
+/* 製品 */
+.products {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 100px 20px;
+}
+
+.product img {
+  width: 280px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  transition: transform 0.4s ease;
+}
+
+.product img:hover {
+  transform: scale(1.05);
+}
+
+.product h3 {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 1rem;
   letter-spacing: 1px;
 }
 
-/* 左右のレイアウト */
-.brand-container {
+
+
+/* ストーリー */
+.story {
+  padding: 100px 20px;
+  background: #fefcf8;
+}
+
+.story-content {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  align-items: center;
   gap: 50px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.story-content img {
+  width: 50%;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.story-text {
+  flex: 1;
+}
+
+.story-text h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.story-text p {
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.process {
+  background: #fefcf8;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.process-title {
+  font-family: "Times New Roman", serif;
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #111;
+}
+
+.process-step {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1000px;
+  flex-direction: row; /* すべて画像＋文章 */
+}
+
+.process-step img {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.process-step .caption {
+  flex: 1;
   text-align: left;
 }
 
-/* 左側のテキスト */
-.brand-text {
-  flex: 1;
-  font-size: 1rem;
-  line-height: 2;
-  color: #222;
+.caption-title {
+  font-family: "Times New Roman", serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 0.5em;
 }
 
-/* 右側の写真 */
-.brand-image {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.brand-image img {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+.caption-text {
+  font-family: "Times New Roman", serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
 }
 
 /* スマホ対応 */
 @media screen and (max-width: 768px) {
-  .brand-container {
+  .process-step {
     flex-direction: column;
-    align-items: center;
     text-align: center;
   }
 
-  .brand-text {
-    text-align: left;
-    margin-bottom: 30px;
-  }
-
-  .brand-image img {
-    max-width: 100%;
+  .process-step .caption {
+    text-align: center;
   }
 }
 
 
 
+/* フッター */
+.footer {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  padding: 50px 20px;
+}
 
+.footer img {
+  width: 120px;
+  margin-bottom: 15px;
+}
 
+.process-step img {
+  width: 400px;
+  height: 300px;
+  object-fit: cover; /* 画像を比率を崩さずトリミング */
+  display: block;
+}
 
+/* アンバサダーセクション */
+.ambassadors {
+  padding: 100px 20px;
+  background: #fefcf8;
+  text-align: center;
+}
 
-.overlay h1 {
+.ambassadors-title {
   font-family: "Times New Roman", serif;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: white;
+  font-size: 2.5rem;
+  color: #111;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.ambassadors-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 50px;
+}
+
+.ambassadors-list {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.ambassador-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+  width: 300px;
+  padding: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* ここで左寄せに */
+  text-align: left;
+}
+
+.ambassador-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.ambassador-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.ambassador-name {
+  font-family: "Times New Roman", serif;
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+  color: #111;
+}
+
+.ambassador-role {
+  font-size: 0.95rem;
+  color: #d4af37; /* ゴールドで肩書き */
+  margin-bottom: 10px;
+}
+
+.ambassador-text {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* スマホ対応 */
+@media screen and (max-width: 768px) {
+  .ambassadors-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
 }
