@@ -1,7 +1,7 @@
-// 動画自動再生
-const video = document.getElementById("heroVideo");
-video.play().catch(() => {
-  // ブラウザが自動再生をブロックした場合の保険
-  video.muted = true;
-  video.play();
+const hamburger = document.getElementById("hamburger");
+const navbar = document.getElementById("navbar");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navbar.classList.toggle("active");
 });
