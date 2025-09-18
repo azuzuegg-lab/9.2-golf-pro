@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POPUP EVENT | 9.2 GOLF PRO</title>
+<link rel="stylesheet" href="style.css">
+<style>
+body {
+  font-family: 'Times New Roman', serif;
+  margin: 0;
+  background-color: #f8f5f0;
+  color: #1a1a1a;
+  overflow-x: hidden;
+}
+
+/* ヒーローセクション */
+.hero {
+  position: relative;
+  height: 70vh;
+  background: url('popup-event.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.2));
+}
+.hero-text {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  z-index: 1;
+}
+.hero-text h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+.hero-text p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* コンテンツ */
+.content {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+.content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #d4af37;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+.content p {
+  line-height: 1.8;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+/* イベント詳細グリッド */
+.event-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+.event-details div {
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+.event-details div.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.event-details div h3 {
+  margin-top: 0;
+  color: #d4af37;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+/* CTAボタン */
+.cta-button {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #d4af37;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.cta-button:hover {
+  background: #b89132;
+}
+
+/* フッター */
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+/* 過去イベント記事リスト */
+.category-filter {
+  margin: 50px auto 20px;
+  text-align: center;
+}
+.category-filter button {
+  margin: 0 10px 10px;
+  padding: 6px 16px;
+  cursor: pointer;
+  border: 1px solid #333;
+  background-color: #fff;
+  transition: 0.3s;
+}
+.category-filter button.active {
+  background-color: #333;
+  color: #fff;
+}
+.news-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+.news-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+.news-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.news-card img {
+  width: 100%;
+  display: block;
+}
+.news-info {
+  padding: 15px;
+}
+.news-info .category {
+  font-weight: bold;
+  color: #d4af37;
+  display: block;
+  margin-bottom: 5px;
+}
+.news-info .date {
+  font-size: 0.9rem;
+  color: #999;
+  display: block;
+  margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+
+<!-- ヒーロー -->
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-text">
+    <h1>POPUP EVENT 2025</h1>
+    <p>上質な体験と新作コレクションをお楽しみください</p>
+  </div>
+</section>
+
+<!-- コンテンツ -->
+<section class="content">
+  <h2>イベント概要</h2>
+  <p>
+    9.2 GOLF PROの最新コレクションを体験できるPOPUPイベントを開催します。
+    限定アイテムや特別展示もご用意。ゴルフ愛好家の皆様に特別な時間をお届けします。
+  </p>
+
+  <div class="event-details">
+    <div><h3>開催日</h3><p>2025年10月25日(土) ～ 10月27日(月)</p></div>
+    <div><h3>開催場所</h3><p>東京都港区南青山〇〇ビル 1F</p></div>
+    <div><h3>入場</h3><p>無料（予約優先）</p></div>
+    <div><h3>特典</h3><p>限定ノベルティ、先行予約販売、フォトスポットあり</p></div>
+  </div>
+
+  <a href="reservation.html" class="cta-button">ご予約はこちら</a>
+</section>
+
+<!-- 過去イベント記事 -->
+<section class="content">
+  <h2>過去イベント</h2>
+  <div class="category-filter">
+    <button data-category="all" class="active">すべて</button>
+    <button data-category="EVENT">イベント</button>
+    <button data-category="REPORT">開催報告</button>
+    <button data-category="NEWS">ニュース</button>
+  </div>
+  <div class="news-grid">
+    <article class="news-card">
+      <a href="event-autumn2024.html">
+        <img src="event-main.jpg" alt="秋のPOPUP 2024">
+        <div class="news-info">
+          <span class="category">EVENT</span>
+          <span class="date">2024.10.20</span>
+          <h2>秋のPOPUP 2024</h2>
+        </div>
+      </a>
+    </article>
+    <article class="news-card">
+      <a href="report-summer2024.html">
+        <img src="event-report.jpg" alt="夏のPOPUPレポート">
+        <div class="news-info">
+          <span class="category">REPORT</span>
+          <span class="date">2024.07.15</span>
+          <h2>夏のPOPUPレポート</h2>
+        </div>
+      </a>
+    </article>
+    <article class="news-card">
+      <a href="news-release2024.html">
+        <img src="press.jpg" alt="ニュースリリース">
+        <div class="news-info">
+          <span class="category">NEWS</span>
+          <span class="date">2024.09.01</span>
+          <h2>新作リリース情報</h2>
+        </div>
+      </a>
+    </article>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 9.2 GOLF PRO. All Rights Reserved.
+</footer>
+
+<script>
+// フェードインアニメーション
+function fadeInOnScroll() {
+  const elements = document.querySelectorAll('.event-details div, .news-card');
+  const windowBottom = window.innerHeight;
+  elements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if(rect.top < windowBottom - 50){
+      el.classList.add('visible');
+    }
+  });
+}
+window.addEventListener('scroll', fadeInOnScroll);
+window.addEventListener('load', fadeInOnScroll);
+
+// カテゴリ絞り込み
+const buttons = document.querySelectorAll('.category-filter button');
+const articles = document.querySelectorAll('.news-card');
+
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    const category = button.getAttribute('data-category');
+
+    buttons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+
+    articles.forEach(article => {
+      const articleCategory = article.querySelector('.category').textContent;
+      if (category === 'all' || articleCategory === category) {
+        article.style.display = 'block';
+        setTimeout(() => article.classList.add('visible'), 50);
+      } else {
+        article.style.display = 'none';
+        article.classList.remove('visible');
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>

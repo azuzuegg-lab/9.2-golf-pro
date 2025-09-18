@@ -9,13 +9,16 @@
 <body>
 
   <header class="site-header">
-  <a href="index.html" class="brand-logo">
-    <img src="images/logo.png" alt="logo">
-  </a>
-</header>
+    <a href="index.html" class="brand-logo">
+      <img src="images/logo.png" alt="logo">
+    </a>
+
+    <!-- ハンバーガーメニュー -->
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+  </header>
 
   <!-- ナビゲーション -->
-  <nav class="navbar">
+  <nav class="navbar" id="navbar">
     <ul>
       <li><a href="#">ONLINE STORE</a></li>
       <li><a href="news&event.html">NEWS & EVENT</a></li>
@@ -26,19 +29,16 @@
     </ul>
   </nav>
 
-
-<!-- ヒーローセクション -->
-<header class="hero">
-  <video autoplay muted loop playsinline class="hero-video">
-    <source src="background.mp4" type="video/mp4">
-    お使いのブラウザでは動画を再生できません。
-  </video>
-
-  <div class="hero-text">
-    <h1>技と美の結晶、ラグジュアリーなゴルフシューズ</h1>
-  </div>
-</header>
-
+  <!-- ヒーローセクション -->
+  <header class="hero">
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="background.mp4" type="video/mp4">
+      お使いのブラウザでは動画を再生できません。
+    </video>
+    <div class="hero-text">
+      <h1>技と美の結晶、ラグジュアリーなゴルフシューズ</h1>
+    </div>
+  </header>
 
   <!-- 製品ピックアップ -->
   <section class="products">
@@ -67,30 +67,14 @@
       <div class="story-text">
         <h2>「ゴルフに人生に彩りを」</h2>
         <h2>9.2 GOLF PROが目指す世界</h2>
-        <br>
-        <p>皮製品で有名なイタリアのマルケ州で製造。</p>
-        <br>
-        <p>デザインー兼オーナーのカルロ・キオンナは、</p>
-        <p>プロフゴルファーの兄のために履いた瞬間になじむシューズを企画。</p>
-<br>
-        <p>クラシカルの中にも明るいカラー使いや
-          <br>モード性ある遊び心の高いファッション性が特徴。</p>
-<br>
-        <p>機能性にもこだわり、ソールを徹底的に研究。</p>
-<br>
-        <p>快適なラウンドをサポートする軽く柔らかい履き心地に加え、</p>
-        <p>イタリアらしいオシャレなデザインを取り揃え、</p>
-        <p>「ゴルフに人生に彩りを」をコンセプトに展開。</p>
-<br>
-        <p>ゴルフシューズの概念を変える、メゾンブランドのような
-          <br>最高級のクオリティをぜひあなたもお試しください。</p>
+        <p>皮製品で有名なイタリアのマルケ州で製造。デザイン兼オーナーのカルロ・キオンナは、プロゴルファーの兄のために履いた瞬間になじむシューズを企画。クラシカルの中にも明るいカラー使いやモード性ある遊び心の高いファッション性が特徴。機能性にもこだわり、ソールを徹底的に研究。快適なラウンドをサポートする軽く柔らかい履き心地に加え、イタリアらしいオシャレなデザインを取り揃え、「ゴルフに人生に彩りを」をコンセプトに展開。ゴルフシューズの概念を変える、メゾンブランドのような最高級のクオリティをぜひあなたもお試しください。</p>
       </div>
     </div>
   </section>
 
+  <!-- processセクションやフッターは省略（既存のCSS対応済み） -->
 
-
-<section class="process">
+  <section class="process">
   <h2 class="process-title">
     機能性とファッション性を実現させる<br>9.2 GOLF PROのこだわり
   </h2>
@@ -152,38 +136,34 @@
 </section>
 
 
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const steps = document.querySelectorAll(".process-step");
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target); // 1度表示されたら監視を外す
-      }
-    });
-  }, { threshold: 0.2 });
-
-  steps.forEach(step => observer.observe(step));
-});
-</script>
-
-
-
-
-
-  <!-- フッター -->
   <footer class="footer">
     <img src="images/logo2.png" alt="ブランドロゴ">
     <p>&copy; 2025 9.2 GOLF PRO</p>
   </footer>
 
+  <!-- JS -->
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const navbar = document.getElementById("navbar");
+
+    menuToggle.addEventListener("click", () => {
+      navbar.classList.toggle("active");
+    });
+
+    // IntersectionObserver（process-stepアニメーション）
+    document.addEventListener("DOMContentLoaded", () => {
+      const steps = document.querySelectorAll(".process-step");
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      steps.forEach(step => observer.observe(step));
+    });
+  </script>
 </body>
 </html>
-
-
-
-
 

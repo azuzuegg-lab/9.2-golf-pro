@@ -5,11 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ニュース & イベント | 9.2 GOLF PRO</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* 絞り込みボタンの簡易スタイル */
+    .category-filter {
+      margin-bottom: 20px;
+    }
+    .category-filter button {
+      margin-right: 10px;
+      padding: 5px 12px;
+      cursor: pointer;
+      border: 1px solid #333;
+      background-color: #fff;
+      transition: 0.3s;
+    }
+    .category-filter button.active {
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
 
   <main class="news-page">
     <h1>NEWS & EVENT</h1>
+
+    <!-- カテゴリボタン -->
+    <div class="category-filter">
+      <button data-category="all" class="active">すべて</button>
+      <button data-category="NEWS">ニュース</button>
+      <button data-category="EVENT">イベント</button>
+      <button data-category="REPORT">開催報告</button>
+    </div>
 
     <div class="news-grid">
       <!-- イベント告知 -->
@@ -20,18 +46,6 @@
             <span class="category">EVENT</span>
             <span class="date">2025.10.25</span>
             <h2>秋のプライベートエキシビション開催</h2>
-          </div>
-        </a>
-      </article>
-
-      <!-- 開催報告 -->
-      <article class="news-card">
-        <a href="event-report2025.html">
-          <img src="event-report.jpg" alt="展示会レポート">
-          <div class="news-info">
-            <span class="category">REPORT</span>
-            <span class="date">2025.11.01</span>
-            <h2>展示会開催レポート</h2>
           </div>
         </a>
       </article>
@@ -47,22 +61,63 @@
           </div>
         </a>
       </article>
+
+
+      <!-- 開催報告 -->
+      <article class="news-card">
+        <a href="umeda240828.html">
+          <img src="event-report.jpg" alt="popupレポート">
+          <div class="news-info">
+            <span class="category">REPORT</span>
+            <span class="date">2024.09.20</span>
+            <h2>阪急うめだ本店　POP-UP SHOP開催報告</h2>
+          </div>
+        </a>
+      </article>
+
+
     </div>
   </main>
 
   <!-- フッター -->
   <footer>
     <div class="footer-links">
-    <a href="index.html">HOME</a>
-    <a href="shop.html">ONLINESHOP</a>
-    <a href="news&event.html">NEWS & EVENT</a>
-    <a href="story.html">STORY</a>
-    <a href="ambassadors.html">PRO & AMBASSADER</a>
-    <a href="interviews.html">INTERVIEW</a>
-    <a href="contact.html">CONTACT</a>
+      <a href="index.html">HOME</a>
+      <a href="shop.html">ONLINESHOP</a>
+      <a href="news&event.html">NEWS & EVENT</a>
+      <a href="story.html">STORY</a>
+      <a href="ambassadors.html">PRO & AMBASSADER</a>
+      <a href="interviews.html">INTERVIEW</a>
+      <a href="contact.html">CONTACT</a>
     </div>
     <p>&copy; 2025 9.2 GOLF PRO. All Rights Reserved.</p>
   </footer>
+
+  <!-- 絞り込み用スクリプト -->
+  <script>
+    const buttons = document.querySelectorAll('.category-filter button');
+    const articles = document.querySelectorAll('.news-card');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const category = button.getAttribute('data-category');
+
+        // アクティブボタンの切替
+        buttons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        articles.forEach(article => {
+          const articleCategory = article.querySelector('.category').textContent;
+          if (category === 'all' || articleCategory === category) {
+            article.style.display = 'block';
+          } else {
+            article.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
+
 

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>新作コレクション発表 | 9.2 GOLF PRO</title>
+<link rel="stylesheet" href="style.css">
+<style>
+body {
+  font-family: 'Times New Roman', serif;
+  margin: 0;
+  background-color: #f8f5f0;
+  color: #1a1a1a;
+}
+
+/* 記事コンテンツ */
+.content {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 0 20px;
+  line-height: 1.8;
+}
+.content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+.content .meta {
+  font-size: 1rem;
+  color: #999;
+  margin-bottom: 30px;
+}
+.content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #d4af37;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+.content p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+/* 関連記事 */
+.related-articles {
+  margin-top: 50px;
+}
+.related-articles h3 {
+  font-size: 1.5rem;
+  border-bottom: 2px solid #d4af37;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+.related-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+.related-grid a {
+  display: block;
+  text-decoration: none;
+  color: #1a1a1a;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+  opacity: 0;
+  transform: translateY(30px);
+}
+.related-grid a:hover {
+  transform: translateY(-5px);
+}
+.related-grid img {
+  width: 100%;
+  display: block;
+}
+.related-grid h4 {
+  padding: 10px 15px;
+  margin: 0;
+  font-size: 1rem;
+  color: #d4af37;
+}
+
+/* CTAボタン */
+.cta-button {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #d4af37;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: 0.3s;
+  margin-top: 30px;
+}
+.cta-button:hover {
+  background: #b89132;
+}
+
+/* フッター */
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+/* レスポンシブ */
+@media screen and (max-width: 1024px) {
+  .related-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 600px) {
+  .related-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- 記事コンテンツ -->
+<section class="content">
+  <h1>阪急うめだ本店　POP-UP SHOP開催報告</h1>
+  <div class="meta">NEWS | 2024.08.21</div>
+
+  <p>
+    2024年8月28日（水）〜 9月10日（火）に阪急うめだ本店 8Fコトコトステージ82にて開催されたPOPUPイベントに、多くのお客様にご来場いただきました。
+上質なレザーアイテムや限定コレクションを手に取ってご覧いただき、洗練された空間で特別な時間をお楽しみいただきました。
+ご来場の皆様には心より御礼申し上げます。
+  </p>
+  <p>
+ 今後も皆様に特別な体験をご提供できるよう、引き続き努力してまいります。
+  </p>
+
+  <a href="news&event.html" class="cta-button">ニュース一覧へ戻る</a>
+
+  <!-- 関連記事 -->
+  <div class="related-articles">
+    <h3>関連ニュース</h3>
+    <div class="related-grid">
+      <a href="event-autumn2025.html">
+        <img src="event-main.jpg" alt="秋のPOPUP 2025">
+        <h4>秋のPOPUP 2025</h4>
+      </a>
+      <a href="event-report2025.html">
+        <img src="event-report.jpg" alt="展示会レポート">
+        <h4>展示会レポート</h4>
+      </a>
+      <a href="news-release2025.html">
+        <img src="press.jpg" alt="ニュースリリース">
+        <h4>新作リリース情報</h4>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 9.2 GOLF PRO. All Rights Reserved.
+</footer>
+
+<script>
+// フェードインアニメーション
+function fadeInElements() {
+  const items = document.querySelectorAll('.related-grid a');
+  const windowBottom = window.innerHeight;
+  items.forEach(item => {
+    const rect = item.getBoundingClientRect();
+    if(rect.top < windowBottom - 50){
+      item.classList.add('visible');
+    }
+  });
+}
+window.addEventListener('scroll', fadeInElements);
+window.addEventListener('load', fadeInElements);
+</script>
+
+</body>
+</html>

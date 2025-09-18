@@ -1,78 +1,132 @@
-/* リセット */
+/* ==============================
+   リセット
+============================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ロゴヘッダー */
-.site-header {
-  background-color: rgba(250, 248, 240, 0.95) !important; /* ナビと同じ半透明ベージュ */
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 20px;
-  position: relative;
-  z-index: 10;
+body {
+  font-family: "Times New Roman", serif;
+  background: #f9f6f0;
+  color: #2b2b2b;
+  line-height: 1.7;
 }
 
-/* ロゴを中央に配置 */
+/* ==============================
+   ヘッダー
+============================== */
+.site-header {
+  display: flex;
+  justify-content: center; /* ロゴ中央 */
+  align-items: center;
+  padding: 2.5em 5%;
+  background: #faf5ef;
+  position: relative;
+  z-index: 100;
+}
+
 .site-header .brand-logo {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
 
-
 .site-header .brand-logo img {
   width: 140px;
   height: auto;
 }
 
-/* ナビゲーション（スクロール時もついてくる） */
+/* =============================
+   モバイル用ハンバーガー
+============================= */
+.menu-toggle {
+  display: none; /* PCでは非表示 */
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 25px;
+  z-index: 1001;
+}
+
+@media screen and (max-width: 767px) {
+  /* ハンバーガーを表示 */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* ナビ初期非表示 */
+  .navbar {
+    display: none;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(250, 248, 240, 0.95);
+    position: absolute;
+    top: 70px; /* ヘッダーの下に配置 */
+    left: 0;
+    padding: 10px 0;
+    border-bottom: 1px solid #d4af37;
+    z-index: 1000;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 12px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .navbar a {
+    font-size: 1rem;
+    display: block;
+    padding: 10px 0;
+  }
+
+  /* ナビを開いたときの表示 */
+  .navbar.active {
+    display: block;
+  }
+}
+
+/* ==============================
+   ナビゲーション
+============================== */
 .navbar {
+  display: flex;
+  justify-content: center;
+  background: rgba(250,248,240,0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #d4af37;
   position: sticky;
   top: 0;
-  background: transparent; /* 背景を透明に変更 */
-  backdrop-filter: none;   /* 背景ぼかしも無効化 */
-  border-bottom: none;     /* 下線も消す */
-  z-index: 1000;
+  z-index: 99;
 }
 
 .navbar ul {
-  list-style: none;
-  margin: 0;
-  padding: 12px 0;
   display: flex;
-  justify-content: center;
   gap: 40px;
+  list-style: none;
+  padding: 15px 0;
+  margin: 0;
 }
 
 .navbar a {
   text-decoration: none;
-  color: white; /* 背景が透明なので文字は白が見やすい */
+  color: #111;
   font-size: 0.95rem;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   transition: color 0.3s;
 }
 
 .navbar a:hover {
-  color: #d4af37; /* ゴールドに変化 */
+  color: #d4af37;
 }
 
-
-
-
-/* ベース */
-body {
-  margin: 0;
-  font-family: "Times New Roman", serif;
-  color: #111;
-  background: #fefcf8; /* 高級感あるアイボリーベージュ */
-}
-
-/* ヒーロー */
+/* ==============================
+   ヒーローセクション
+============================== */
 .hero {
   position: relative;
   width: 100%;
@@ -90,7 +144,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1; /* 文字より後ろに表示 */
+  z-index: -1;
 }
 
 .hero-text {
@@ -98,7 +152,6 @@ body {
   z-index: 1;
   text-align: center;
   color: white;
-  font-family: "Times New Roman", serif;
 }
 
 .hero-text h1 {
@@ -106,48 +159,25 @@ body {
   letter-spacing: 0.05em;
 }
 
-/* ナビゲーション */
-.navbar {
-  position: sticky;
-  top: 0;
-  background: rgba(250, 248, 240, 0.95);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid #d4af37; /* ゴールドライン */
-  text-align: center;
-  z-index: 1000;
-}
-
-.navbar ul {
-  list-style: none;
-  margin: 0;
-  padding: 15px;
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: #111;
-  font-size: 0.95rem;
-  letter-spacing: 1.5px;
-  transition: color 0.3s;
-}
-
-.navbar a:hover {
-  color: #d4af37; /* ゴールドに変化 */
-}
-
-/* 製品 */
+/* ==============================
+   製品ピックアップ
+============================== */
 .products {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 50px;
   padding: 100px 20px;
 }
 
+.product {
+  flex: 1 1 280px;
+  max-width: 280px;
+  text-align: center;
+}
+
 .product img {
-  width: 280px;
+  width: 100%;
   border-radius: 12px;
   box-shadow: 0 6px 15px rgba(0,0,0,0.15);
   transition: transform 0.4s ease;
@@ -158,15 +188,13 @@ body {
 }
 
 .product h3 {
-  text-align: center;
   margin-top: 15px;
   font-size: 1rem;
-  letter-spacing: 1px;
 }
 
-
-
-/* ストーリー */
+/* ==============================
+   ストーリー
+============================== */
 .story {
   padding: 100px 20px;
   background: #fefcf8;
@@ -193,14 +221,11 @@ body {
 .story-text h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #111;
 }
 
-.story-text p {
-  line-height: 1.8;
-  font-size: 1rem;
-}
-
+/* ==============================
+   プロセス
+============================== */
 .process {
   background: #fefcf8;
   padding: 80px 20px;
@@ -211,12 +236,8 @@ body {
 }
 
 .process-title {
-  font-family: "Times New Roman", serif;
   font-size: 2rem;
-  letter-spacing: 0.05em;
-  margin-bottom: 40px;
   text-align: center;
-  color: #111;
 }
 
 .process-step {
@@ -225,7 +246,6 @@ body {
   justify-content: center;
   gap: 30px;
   max-width: 1000px;
-  flex-direction: row; /* すべて画像＋文章 */
 }
 
 .process-step img {
@@ -233,43 +253,26 @@ body {
   height: 300px;
   object-fit: cover;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .process-step .caption {
   flex: 1;
-  text-align: left;
 }
 
 .caption-title {
-  font-family: "Times New Roman", serif;
   font-size: 1.4rem;
   font-weight: bold;
-  margin-bottom: 0.5em;
 }
 
 .caption-text {
-  font-family: "Times New Roman", serif;
   font-size: 1.1rem;
   line-height: 1.6;
   color: #333;
 }
 
-/* スマホ対応 */
-@media screen and (max-width: 768px) {
-  .process-step {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .process-step .caption {
-    text-align: center;
-  }
-}
-
-
-
-/* フッター */
+/* ==============================
+   フッター
+============================== */
 .footer {
   background: #111;
   color: #fff;
@@ -282,12 +285,150 @@ body {
   margin-bottom: 15px;
 }
 
-.process-step img {
-  width: 400px;
-  height: 300px;
-  object-fit: cover; /* 画像を比率を崩さずトリミング */
-  display: block;
+/* ==============================
+   レスポンシブ
+============================== */
+@media screen and (max-width: 768px) {
+  .story-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .story-content img {
+    width: 90%;
+  }
+
+  .products {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .product {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .process-step {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navbar {
+    display: none;
+    flex-direction: column;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 12px;
+    padding: 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
 }
+
+
+/* ==============================
+   ニュース＆イベントページ
+============================== */
+
+/* ニュースページ */
+.news-page {
+  max-width: 1200px;
+  margin: 3em auto;
+  padding: 0 2em;
+}
+.news-page h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3em;
+}
+
+/* グリッド */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5em;
+}
+
+/* カード */
+.news-card {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.news-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+.news-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* カード情報 */
+.news-info {
+  padding: 1.2em;
+}
+.news-info .category {
+  display: inline-block;
+  background: #b38b59;
+  color: white;
+  font-size: 0.8rem;
+  padding: 0.3em 0.9em;
+  border-radius: 20px;
+  margin-bottom: 0.5em;
+}
+.news-info .date {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5em;
+}
+.news-info h2 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+/* フッター */
+footer {
+  background-color: #f5f5f5; /* 背景色 */
+  color: #333;
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: 40px;
+  font-family: "Times New Roman", serif;
+}
+
+.footer-links {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  margin: 0 12px;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
 
 /* アンバサダーセクション */
 .ambassadors {
@@ -368,34 +509,6 @@ body {
   }
 }
 
-
-
-
-
-
-
-
-/* ==============================
-   共通デザイン
-============================== */
-body {
-  margin: 0;
-  font-family: "Helvetica Neue", "Arial", sans-serif;
-  background: #fff;
-  color: #111;
-  line-height: 1.7;
-}
-
-header {
-  text-align: center;
-  padding: 40px 20px;
-}
-
-.brand-logo {
-  font-family: "Times New Roman", serif;
-  font-size: 1.6rem;
-  letter-spacing: 2px;
-}
 
 /* ==============================
    記事一覧
@@ -595,6 +708,10 @@ body {
 
 
 
+/* ==============================
+   お問い合わせについて
+   ============================== */
+
 .contact-section {
   max-width: 700px;
   margin: 80px auto;
@@ -695,106 +812,5 @@ footer {
 
 
 
-/* 全体 */
-body {
-  margin: 0;
-  font-family: "Times New Roman", serif;
-  background: #f9f6f0;
-  color: #2b2b2b;
-}
 
-/* ヘッダー */
-.site-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5em 5%;
-  background: #faf5ef;
-  font-weight: bold;
-}
-.site-header .logo {
-  font-size: 1.3rem;
-  letter-spacing: 2px;
-}
-.site-header nav ul {
-  list-style: none;
-  display: flex;
-  gap: 2em;
-}
-.site-header nav a {
-  text-decoration: none;
-  color: #2b2b2b;
-  transition: color 0.3s;
-}
-.site-header nav a:hover {
-  color: #b38b59;
-}
 
-/* ニュースページ */
-.news-page {
-  max-width: 1200px;
-  margin: 3em auto;
-  padding: 0 2em;
-}
-.news-page h1 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 3em;
-}
-
-/* グリッド */
-.news-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2.5em;
-}
-
-/* カード */
-.news-card {
-  background: #fff;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.news-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-}
-.news-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-}
-
-/* カード情報 */
-.news-info {
-  padding: 1.2em;
-}
-.news-info .category {
-  display: inline-block;
-  background: #b38b59;
-  color: white;
-  font-size: 0.8rem;
-  padding: 0.3em 0.9em;
-  border-radius: 20px;
-  margin-bottom: 0.5em;
-}
-.news-info .date {
-  display: block;
-  font-size: 0.9rem;
-  color: #666;
-  margin-bottom: 0.5em;
-}
-.news-info h2 {
-  font-size: 1.2rem;
-  margin: 0;
-}
-
-/* フッター */
-.site-footer {
-  text-align: center;
-  padding: 2.5em 0;
-  background: #f0ebe1;
-  font-size: 0.9rem;
-}
