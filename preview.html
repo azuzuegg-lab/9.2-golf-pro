@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>9.2 GOLF PRO ECサイト</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family:"Times New Roman", serif;
+  background:#F5F5F5;
+  color:#2C2C2C;
+  line-height:1.6;
+}
+
+/* ==============================
+   ヘッダー
+============================== */
+header {
+  background:#2C2C2C;
+  color:#F8F8F8;
+  padding:20px 10%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+header a { color:#C0C0C0; text-decoration:none; margin-left:15px; transition:0.3s; }
+header a:hover { color:#FFFFFF; }
+
+/* ==============================
+   ヒーロー
+============================== */
+.hero {
+  position:relative;
+  background:url('https://via.placeholder.com/1200x500') center/cover no-repeat;
+  height:500px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.hero h1 {
+  color:#FFF;
+  font-size:3rem;
+  letter-spacing:2px;
+  background:rgba(0,0,0,0.4);
+  padding:20px 40px;
+  border-radius:8px;
+  text-align:center;
+}
+
+/* ==============================
+   セクション
+============================== */
+section { padding:60px 10%; }
+section h2 { font-size:2rem; margin-bottom:40px; }
+
+/* ==============================
+   商品グリッド
+============================== */
+.product-grid {
+  display:flex;
+  flex-wrap:wrap;
+  gap:30px;
+  justify-content:center;
+}
+.product {
+  position:relative;
+  border-radius:10px;
+  overflow:hidden;
+  flex:1 1 calc(33% - 30px);
+  max-width:300px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.product:hover { transform: translateY(-5px); box-shadow:0 12px 28px rgba(0,0,0,0.15); }
+.product img { width:100%; height:400px; object-fit:cover; }
+.overlay {
+  position:absolute;
+  bottom:0;
+  width:100%;
+  background:rgba(0,0,0,0.55);
+  color:#FFF;
+  padding:12px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  height:100%;
+  transition: background 0.3s;
+}
+.product:hover .overlay { background:rgba(0,0,0,0.4); }
+.overlay h3 { font-size:1.2rem; margin-bottom:5px; }
+.overlay p { font-size:0.9rem; margin-bottom:10px; }
+.button {
+  display:inline-block;
+  padding:12px 28px;
+  background:#2C2C2C;
+  color:#F8F8F8;
+  text-decoration:none;
+  font-family:"Times New Roman", serif;
+  border-radius:6px;
+  transition:0.3s;
+  align-self:flex-start;
+  margin-top:auto;
+}
+.button:hover { background:#444444; color:#FFFFFF; }
+
+/* ==============================
+   カテゴリバナー
+============================== */
+.category-grid {
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+  justify-content:center;
+  margin-bottom:60px;
+}
+.category {
+  flex:1 1 calc(33% - 20px);
+  max-width:300px;
+  position:relative;
+  border-radius:10px;
+  overflow:hidden;
+  cursor:pointer;
+}
+.category img { width:100%; height:200px; object-fit:cover; }
+.category h3 {
+  position:absolute;
+  bottom:10px;
+  left:10px;
+  color:#FFF;
+  background:rgba(0,0,0,0.5);
+  padding:6px 12px;
+  border-radius:6px;
+  font-size:1.1rem;
+}
+
+/* ==============================
+   特集バナー
+============================== */
+.feature-banner {
+  position:relative;
+  background:url('https://via.placeholder.com/1200x300') center/cover no-repeat;
+  height:300px;
+  border-radius:10px;
+  overflow:hidden;
+  margin-bottom:60px;
+}
+.feature-banner h3 {
+  position:absolute;
+  left:30px;
+  bottom:30px;
+  color:#FFF;
+  font-size:2rem;
+  background:rgba(0,0,0,0.5);
+  padding:12px 24px;
+  border-radius:6px;
+}
+
+/* ==============================
+   ニュース
+============================== */
+.news-item {
+  background:#FFF;
+  padding:20px;
+  border-radius:8px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+  margin-bottom:30px;
+}
+.news-item h4 { font-size:1.1rem; margin-bottom:8px; }
+.news-item p { font-size:0.9rem; color:#4A4A4A; }
+
+/* ==============================
+   フッター
+============================== */
+footer {
+  background:#2C2C2C;
+  color:#F8F8F8;
+  padding:60px 10%;
+  text-align:center;
+}
+footer a { color:#C0C0C0; text-decoration:none; margin-left:15px; }
+footer a:hover { color:#FFFFFF; }
+
+/* ==============================
+   レスポンシブ
+============================== */
+@media (max-width:1024px){
+  .product { flex:1 1 calc(50% - 30px); }
+  .category { flex:1 1 calc(50% - 20px); }
+}
+@media (max-width:768px){
+  section { padding:50px 5%; }
+  header { flex-direction:column; gap:10px; }
+  .product, .category { flex:1 1 100%; max-width:none; }
+  .hero h1 { font-size:2rem; padding:12px 24px; }
+  .feature-banner h3 { font-size:1.5rem; padding:8px 16px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">9.2 GOLF PRO ECサイト</div>
+  <nav>
+    <a href="#">商品一覧</a>
+    <a href="#">カート</a>
+    <a href="#">お問い合わせ</a>
+  </nav>
+</header>
+
+<!-- ヒーロー -->
+<div class="hero">
+  <h1>欧州的洗練ラグジュアリーなゴルフシューズ</h1>
+</div>
+
+<!-- 注目商品 -->
+<section>
+  <h2>注目商品</h2>
+  <div class="product-grid">
+    <div class="product">
+      <img src="https://via.placeholder.com/300x400" alt="商品1">
+      <div class="overlay">
+        <h3>ゴルフシューズ モデルA</h3>
+        <p>上質で快適な履き心地。</p>
+        <a href="#" class="button">カートに入れる</a>
+      </div>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/300x400" alt="商品2">
+      <div class="overlay">
+        <h3>ゴルフシューズ モデルB</h3>
+        <p>欧州の伝統技術で仕上げた逸品。</p>
+        <a href="#" class="button">カートに入れる</a>
+      </div>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/300x400" alt="商品3">
+      <div class="overlay">
+        <h3>ゴルフシューズ モデルC</h3>
+        <p>洗練されたデザインと耐久性。</p>
+        <a href="#" class="button">カートに入れる</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- カテゴリ -->
+<section>
+  <h2>おすすめカテゴリ</h2>
+  <div class="category-grid">
+    <div class="category">
+      <img src="https://via.placeholder.com/300x200" alt="カテゴリ1">
+      <h3>レディース</h3>
+    </div>
+    <div class="category">
+      <img src="https://via.placeholder.com/300x200" alt="カテゴリ2">
+      <h3>メンズ</h3>
+    </div>
+    <div class="category">
+      <img src="https://via.placeholder.com/300x200" alt="カテゴリ3">
+      <h3>限定モデル</h3>
+    </div>
+  </div>
+</section>
+
+<!-- 特集バナー -->
+<section>
+  <h2>特集</h2>
+  <div class="feature-banner">
+    <h3>秋の新作コレクション</h3>
+  </div>
+</section>
+
+<!-- 最新ニュース -->
+<section>
+  <h2>最新ニュース</h2>
+  <div class="news-item">
+    <h4>2025.09.19 新モデル発売</h4>
+    <p>モデルDとモデルEの新しいゴルフシューズが登場しました。</p>
+  </div>
+  <div class="news-item">
+    <h4>2025.09.10 ブランドアンバサダー契約</h4>
+    <p>著名アマチュアゴルファーとアンバサダー契約を締結。</p>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 9.2 GOLF PRO. All rights reserved.</p>
+  <p><a href="#">Privacy Policy</a></p>
+</footer>
+
+</body>
+</html>
+
+
+
