@@ -20,7 +20,7 @@
   <!-- ナビゲーション -->
   <nav class="navbar" id="navbar">
     <ul>
-      <li><a href="#">ONLINE STORE</a></li>
+      <li><a href="https://oiso.xsrv.jp/blog/9punto2golfproshoes/">ONLINE STORE</a></li>
       <li><a href="news&event.html">NEWS & EVENT</a></li>
       <li><a href="story.html">STORY</a></li>
       <li><a href="ambassadors.html">PRO & AMBASSADER</a></li>
@@ -36,29 +36,38 @@
       お使いのブラウザでは動画を再生できません。
     </video>
     <div class="hero-text">
-      <h1>技と美の結晶、ラグジュアリーなゴルフシューズ</h1>
+      
     </div>
   </header>
 
   <!-- 製品ピックアップ -->
-  <section class="products">
-    <div class="product">
+<section class="products">
+  <div class="product">
+    <a href="st-andrews.html">
       <img src="images/st-andrews.jpg" alt="st-andrews">
-      <h3>ST.ANDREWS</h3>
-    </div>
-    <div class="product">
+    </a>
+    <h3>ST.ANDREWS</h3>
+  </div>
+  <div class="product">
+    <a href="ryder-cup.html">
       <img src="images/ryder-cup.jpg" alt="ryder-cup">
-      <h3>RYDER CUP</h3>
-    </div>
-    <div class="product">
+    </a>
+    <h3>RYDER CUP</h3>
+  </div>
+  <div class="product">
+    <a href="mask-nylon.html">
       <img src="images/mask-nylon.jpg" alt="mask-nylon">
-      <h3>MASK NYLON</h3>
-    </div>
-    <div class="product">
+    </a>
+    <h3>MASK NYLON</h3>
+  </div>
+  <div class="product">
+    <a href="fashion.html">
       <img src="images/fashion.jpg" alt="fashion">
-      <h3>FASHION</h3>
-    </div>
-  </section>
+    </a>
+    <h3>FASHION</h3>
+  </div>
+</section>
+
 
   <!-- ブランドストーリー -->
   <section class="story">
@@ -136,11 +145,17 @@
 
       <a href="care.html">お手入れ方法について</a>
 
-      
     </div>
   </div>
 </section>
 
+ <head>
+  <meta charset="UTF-8">
+  <title>トップページ</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
 
   <footer class="footer">
     <img src="images/logo2.png" alt="ブランドロゴ">
@@ -170,6 +185,29 @@
       steps.forEach(step => observer.observe(step));
     });
   </script>
+
+  <!-- bodyの最後に追加 -->
+<a href="https://www.instagram.com/jp_9.2golfpro/" 
+   target="_blank" 
+   class="instagram-link">
+  <i class="fa-brands fa-instagram"></i>
+</a>
+
+
 </body>
 </html>
 
+<body>
+  <!-- ロゴオーバーレイ -->
+  <div id="overlay">
+    <img src="https://via.placeholder.com/200x100?text=LOGO" alt="Logo" class="logo">
+  </div>
+
+  <!-- メインコンテンツ -->
+  <div id="main-content" style="display:none;">
+    <section class="hero">
+      <!-- ここにヒーローやコンテンツ -->
+    </section>
+    <!-- 他のセクション -->
+  </div>
+</body>

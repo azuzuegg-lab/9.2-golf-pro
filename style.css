@@ -22,7 +22,7 @@ body {
   justify-content: center; /* ロゴ中央 */
   align-items: center;
   padding: 2.5em 5%;
-  background: #faf5ef;
+  background: rgba(250, 248, 240, 0.95);
   position: relative;
   z-index: 100;
 }
@@ -62,7 +62,7 @@ body {
     display: none;
     width: 100%;
     text-align: center;
-    background-color: rgba(250, 248, 240, 0.95);
+    background-color: rgba(250, 248, 240, 0.6);
     position: absolute;
     top: 70px; /* ヘッダーの下に配置 */
     left: 0;
@@ -96,7 +96,7 @@ body {
 .navbar {
   display: flex;
   justify-content: center;
-  background: rgba(250,248,240,0.95);
+  background: rgba(250,248,240,0.6);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid #d4af37;
   position: sticky;
@@ -948,6 +948,32 @@ footer {
 
 
 
+
+
+
+
+
+/* ==============================
+   SNSアイコンについて
+   ============================== */
+/* body または親要素を relative にする */
+body {
+  position: relative;
+}
+
+.instagram-link {
+  position: absolute;     /* 絶対位置に固定 */
+  bottom: 100px;          /* フッターの上に配置 */
+  right: 20px;            /* 右下に寄せる */
+  font-size: 40px;
+  color: #ffffff;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.instagram-link:hover {
+  transform: scale(1.2);
+  color: #555555;
+}
 
 
 

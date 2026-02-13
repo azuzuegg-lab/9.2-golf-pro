@@ -24,3 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   steps.forEach(step => observer.observe(step));
 });
 
+
+
+
+
