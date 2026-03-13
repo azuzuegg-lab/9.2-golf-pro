@@ -977,5 +977,93 @@ body {
 
 
 
+/* ==================================================
+   【最終手段】他の設定を一切壊さず、リンクの色だけを黒くする
+   ================================================== */
+
+/* ① サイト内のほぼ全てのリンクを強制的に「文字と同じ色」にする */
+a:not(.cta-button):not(.back-to-list a):not(.footer a) {
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+/* ② ニュースのタイトルなど、特定の場所を狙い撃ちで黒くする */
+.news-info h2 a, 
+.interview-card a, 
+.related-grid a, 
+.related-grid h4 {
+    color: #1a1a1a !important;
+}
+
+/* ③ マウスを乗せた時だけゴールドにする */
+.news-info h2 a:hover, 
+.interview-card a:hover h3 {
+    color: #d4af37 !important;
+}
 
 
+
+
+
+
+
+/* TOPページのインスタアイコン：右下固定を解除してフッターに配置 */
+.instagram-link {
+    position: relative !important; /* fixed（追従）を解除 */
+    display: inline-block !important;
+    bottom: auto !important;
+    right: auto !important;
+    margin-top: 15px !important;  /* ロゴやコピーライトとの間隔 */
+    
+    color: #ffffff !important;     /* 色は白を維持 */
+    font-size: 30px !important;    /* サイズ調整 */
+    text-decoration: none !important;
+}
+
+.instagram-link:hover {
+    color: #d4af37 !important;
+}
+
+
+
+
+/* インタビューページ専用：黒ロゴ設定 */
+.interview-insta-black {
+    position: static !important;    /* 右下に飛ばないように固定を解除 */
+    display: inline-block !important;
+    vertical-align: middle !important;
+    margin-left: 10px !important;   /* 「→」との隙間 */
+    color: #000000 !important;      /* ここで黒色を指定 */
+    font-size: 26px !important;     /* ロゴの大きさ */
+    text-decoration: none !important;
+}
+
+/* アイコン自体も確実に黒にする */
+.interview-insta-black i {
+    color: #000000 !important;
+}
+
+/* ホバーした時だけ色を変える（お好みで） */
+.interview-insta-black:hover {
+    color: #d4af37 !important; /* ホバー時はゴールドに */
+}
+/* インタビューページ：文章のすぐ横に画像を並べる設定 */
+.instagram-text {
+    display: flex !important;
+    align-items: center !important; /* 上下の中心を揃える */
+    flex-wrap: wrap !important;
+}
+
+.interview-insta-black {
+    display: inline-block !important;
+    position: static !important;    /* 右下固定を解除 */
+    margin-left: 8px !important;    /* 「→」との隙間を8pxに固定 */
+    line-height: 0 !important;      /* 余計な上下の隙間を消す */
+}
+
+.insta-logo-img {
+    width: 24px !important;         /* ロゴの幅を文字に合わせる */
+    height: 24px !important;        /* 高さを固定 */
+    display: block !important;
+    object-fit: contain !important;
+}
