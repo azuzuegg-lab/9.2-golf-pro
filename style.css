@@ -864,18 +864,25 @@ body {
   margin-bottom: 20px;
 }
 
+/* お問い合わせページのメールアドレスの色を指定 */
 .contact-email a {
   font-size: 1.4rem;
   font-weight: bold;
-  color: #000;
+  
+  /* --- ここで好きな色に変えます --- */
+  color: #d4af37 !important;           /* 例：ゴールドに変える場合 */
+  border-bottom: 1px solid #d4af37 !important; /* 下線の色も合わせる */
+  /* ------------------------------ */
+
   text-decoration: none;
-  border-bottom: 1px solid #000;
   transition: color 0.3s, border-color 0.3s;
 }
 
+/* マウスを乗せた時（ホバー）の色 */
 .contact-email a:hover {
-  color: #666;
-  border-color: #666;
+  color: #b89132 !important;           /* 少し濃いゴールドに */
+  border-color: #b89132 !important;
+  opacity: 0.8;
 }
 
 .note {
@@ -1066,4 +1073,25 @@ a:not(.cta-button):not(.back-to-list a):not(.footer a) {
     height: 24px !important;        /* 高さを固定 */
     display: block !important;
     object-fit: contain !important;
+}
+
+
+
+/* 全ページ共通：ふわっとアニメーションの初期設定
+   TOPの画像（.story-content img 等）と、共通クラス（.scroll-fade）の両方に効かせます
+*/
+.story-content img, 
+.process-step img, 
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+/* 画面に入った時に表示させる命令 */
+.story-content img.is-visible, 
+.process-step img.is-visible, 
+.scroll-fade.is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }

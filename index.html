@@ -145,8 +145,8 @@
       </p><br>
 
       <br>
-
-      <a href="care.html">お手入れ方法について</a>
+　　　<p>※お手入れ方法について
+  <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a href="care.html">→こちらをクリック</a></p>
 
     </div>
   </div>
@@ -193,6 +193,28 @@
       }, { threshold: 0.2 });
       steps.forEach(step => observer.observe(step));
     });
+
+    
+/* --- ここから追記：スクロールでふわっと出す --- */
+document.addEventListener("DOMContentLoaded", () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target); // 一度出たら監視終了（動作を軽くする）
+      }
+    });
+  }, { threshold: 0.1 });
+
+  // 監視対象：TOP専用のクラス ＋ 全ページ共通のクラス
+  const scrollTargets = document.querySelectorAll('.story-content img, .process-step img, .scroll-fade');
+  
+  scrollTargets.forEach(el => {
+    observer.observe(el);
+  });
+});
+/* --- 追記ここまで --- */
+
   </script>
 
 
@@ -210,3 +232,10 @@
     <!-- 他のセクション -->
   </div>
 </body>
+
+
+
+
+
+
+
