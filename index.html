@@ -1,27 +1,47 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-
   <link rel="icon" href="favicon.png" type="images/png">
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>9.2 GOLF PRO</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-  <header class="site-header">
-    <a href="index.html" class="brand-logo">
-      <img src="images/logo.png" alt="logo">
-    </a>
-
-    <!-- ハンバーガーメニュー -->
-    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+  <!-- ヘッダー -->
+  <header class="site-header" id="main-header">
+    <div class="header-inner">
+      <div class="h-box h-left">
+        <nav class="pc-nav">
+          <ul>
+            <li><a href="https://oiso.xsrv.jp/blog/9punto2golfproshoes/">ONLINE STORE</a></li>
+            <li><a href="news&event.html">NEWS & EVENT</a></li>
+            <li><a href="story.html">STORY</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="h-box h-center">
+        <a href="index.html" class="brand-logo">
+          <img src="images/logo.png" alt="9.2 GOLF PRO">
+        </a>
+      </div>
+      <div class="h-box h-right">
+        <nav class="pc-nav">
+          <ul>
+            <li><a href="ambassadors.html">PRO & AMBASSADER</a></li>
+            <li><a href="interviews.html">INTERVIEW</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
+        </nav>
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      </div>
+    </div>
   </header>
 
-  <!-- ナビゲーション -->
-  <nav class="navbar" id="navbar">
+  <!-- ★ここが新しく追加したモバイルメニュー★ -->
+  <nav id="navbar" class="navbar">
     <ul>
       <li><a href="https://oiso.xsrv.jp/blog/9punto2golfproshoes/">ONLINE STORE</a></li>
       <li><a href="news&event.html">NEWS & EVENT</a></li>
@@ -36,43 +56,44 @@
   <header class="hero">
     <video autoplay muted loop playsinline class="hero-video">
       <source src="background.mp4" type="video/mp4">
-      お使いのブラウザでは動画を再生できません。
     </video>
-    <div class="hero-text">
-      
+    <div class="main-visual">
+      <video src="video.mp4" autoplay muted loop></video>
+      <a href="#concept" class="scroll-indicator">
+        <span>SCROLL</span>
+        <div class="line">
+          <div id="concept" class="intro-section"></div>
+        </div>
+      </a>
     </div>
+    <div class="hero-text"></div>
   </header>
 
-  <!-- 製品ピックアップ -->
-<section class="products">
-  <div class="product">
-    <a href="st-andrews.html">
-      <img src="images/st-andrews.jpg" alt="st-andrews">
-    </a>
-    <h3>ST.ANDREWS</h3>
+  <!-- コレクション -->
+  <div class="collection-header">
+    <h2 class="collection-title">COLLECTION</h2>
   </div>
-  <div class="product">
-    <a href="ryder-cup.html">
-      <img src="images/ryder-cup.jpg" alt="ryder-cup">
-    </a>
-    <h3>RYDER CUP</h3>
-  </div>
-  <div class="product">
-    <a href="mask-nylon.html">
-      <img src="images/mask-nylon.jpg" alt="mask-nylon">
-    </a>
-    <h3>MASK NYLON</h3>
-  </div>
-  <div class="product">
-    <a href="fashion.html">
-      <img src="images/fashion.jpg" alt="fashion">
-    </a>
-    <h3>FASHION</h3>
-  </div>
-</section>
 
+  <section class="products">
+    <div class="product">
+      <a href="st-andrews.html"><img src="images/st-andrews.jpg" alt="st-andrews"></a>
+      <h3>ST.ANDREWS</h3>
+    </div>
+    <div class="product">
+      <a href="ryder-cup.html"><img src="images/ryder-cup.jpg" alt="ryder-cup"></a>
+      <h3>RYDER CUP</h3>
+    </div>
+    <div class="product">
+      <a href="mask-nylon.html"><img src="images/mask-nylon.jpg" alt="mask-nylon"></a>
+      <h3>MASK NYLON</h3>
+    </div>
+    <div class="product">
+      <a href="fashion.html"><img src="images/fashion.jpg" alt="fashion"></a>
+      <h3>FASHION</h3>
+    </div>
+  </section>
 
-  <!-- ブランドストーリー -->
+  <!-- ストーリー -->
   <section class="story">
     <div class="story-content">
       <img src="images/carlo.jpg" alt="carlo">
@@ -84,158 +105,95 @@
     </div>
   </section>
 
-  <!-- processセクションやフッターは省略（既存のCSS対応済み） -->
-
+  <!-- こだわりセクション -->
   <section class="process">
-  <h2 class="process-title">
-    機能性とファッション性を実現させる<br>9.2 GOLF PROのこだわり
-  </h2>
 
-  <!-- 1つ目 -->
-  <div class="process-step">
-    <img src="images/step1.jpg" alt="step1">
-    <div class="caption">
-      <h3 class="caption-title">POINT 1</h3>
-      <p class="caption-text">
-        1日15足しかできないほど丁寧なALLハンドメイド。イタリア熟練職人の技が極上のゴルフシューズ。アッパー部分を約5〜6時間、アウトソールを1〜2時間かけて1足を縫い上げます。
-      </p>
+    <style>
+      .concept-section-trans { text-align: center; padding: 100px 20px; background-color: transparent; position: relative; z-index: 5; }
+      .concept-sub-gold { font-family: 'Bodoni Moda', serif; font-size: 14px; letter-spacing: 0.5em; color: #c5b38a; text-transform: uppercase; margin-bottom: 25px; display: block; }
+      .concept-main-text { font-family: 'Noto Sans JP', sans-serif; font-size: clamp(1.6rem, 4vw, 2.5rem); font-weight: 300; color: #1a1a1a; line-height: 1.6; margin: 0; }
+      .concept-brand-italic { font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 1.1em; color: #c5b38a; margin: 0 8px; }
+      .concept-divider-gold { margin-top: 50px; display: flex; flex-direction: column; align-items: center; }
+      .concept-divider-gold::before { content: ""; width: 120px; height: 1px; background: linear-gradient(to right, transparent, #c5b38a, transparent); margin-bottom: 20px; }
+      .concept-divider-gold::after { content: ""; width: 4px; height: 4px; background: #c5b38a; border-radius: 50%; }
+    </style>
+
+    <section class="concept-section-trans">
+      <span class="concept-sub-gold">SAVOIR-FAIRE</span>
+      <h2 class="concept-main-text">
+        機能性とファッション性を実現させる<br>
+        <span class="concept-brand-italic">9.2 GOLF PRO</span> のこだわり
+      </h2>
+      <div class="concept-divider-gold"></div>
+    </section>
+
+    <div class="process-step">
+      <img src="images/step1.jpg" alt="step1">
+      <div class="caption">
+        <p class="story-num">I</p>
+        <p class="story-sub-title">ALL HANDMADE</p>
+        <h3 class="story-main-title">ハンドメイドの技</h3>
+        <p class="story-description">1日15足しかできないほど丁寧なALLハンドメイド。イタリア熟練職人の技が極上のゴルフシューズ。アッパー部分を約5〜6時間、アウトソールを1〜2時間かけて1足を縫い上げます。</p>
+      </div>
     </div>
-  </div>
 
-  <!-- 2つ目 -->
-  <div class="process-step">
-    <img src="images/step2.jpg" alt="step2">
-    <div class="caption">
-      <h3 class="caption-title">POINT 2</h3>
-      <p class="caption-text">
-        アウトソールを前後中と3分割することで、足裏への密着感がUP。手で捻れるほど柔らかいソールのため、斜面での安定感もあり、スイングの動作中にも、靴のひねりができるため下半身に粘りが効き、踏ん張ることができます。
-      </p>
+    <div class="process-step">
+      <img src="images/step2.jpg" alt="step2">
+      <div class="caption">
+        <p class="story-num">Ⅱ</p>
+        <p class="story-sub-title">TRISOLE DESIGN</p>
+        <h3 class="story-main-title">トリソール構造</h3>
+        <p class="story-description">アウトソールを前後中と3分割することで、足裏への密着感がUP。手で捻れるほど柔らかいソールのため、斜面での安定感もあり、スイングの動作中も下半身に粘りが効き、踏ん張ることができます。</p>
+      </div>
     </div>
-  </div>
 
-  <!-- 3つ目 -->
-  <div class="process-step">
-    <img src="images/step3.jpg" alt="step3">
-    <div class="caption">
-      <h3 class="caption-title">POINT 3</h3>
-      <p class="caption-text">
-        ソールは特別なEVA素材によって断熱作用があるため、夏は蒸れず、冬場は冷えを防げます。常に快適なプレーが可能で、蒸れないのでにおいも気になりません。
-      </p>
+    <div class="process-step">
+      <img src="images/step3.jpg" alt="step3">
+      <div class="caption">
+        <p class="story-num">Ⅲ</p>
+        <p class="story-sub-title">EVA INSULATION</p>
+        <h3 class="story-main-title">断熱EVAソール</h3>
+        <p class="story-description">特別なEVA素材によって断熱作用があるため、夏は蒸れず、冬場は冷えを防げます。常に快適なプレーが可能で、蒸れないのでにおいも気になりません。</p>
+      </div>
     </div>
-  </div>
 
-  <!-- 4つ目 -->
-  <div class="process-step">
-    <img src="images/step4.jpg" alt="step4">
-    <div class="caption">
-      <h3 class="caption-title">POINT 4</h3>
-      <p class="caption-text">
-        まるでオーダーメイドのようなフィット感！インソールには形状記憶シートを使用し、履けば履くほど足になじみ、疲れにくくなっています。
-      </p>
+    <div class="process-step">
+      <img src="images/step4.jpg" alt="step4">
+      <div class="caption">
+        <p class="story-num">Ⅳ</p>
+        <p class="story-sub-title">MEMORY INSOLE</p>
+        <h3 class="story-main-title">形状記憶インソール</h3>
+        <p class="story-description">まるでオーダーメイドのようなフィット感！インソールには形状記憶シートを使用し、履けば履くほど足になじみ、疲れにくくなっています。</p>
+      </div>
     </div>
-  </div>
 
-  <!-- 5つ目 -->
-  <div class="process-step">
-    <img src="images/step5.jpg" alt="step5">
-    <div class="caption">
-      <h3 class="caption-title">POINT 5</h3>
-      <p class="caption-text">
-        極上のレザーなため、シワもできにくく、汚れもつきにくいです。また、水に濡れてもさっと乾いたタオルで拭いていただくだけで、お手入れはOKです。
-      </p><br>
-
-      <br>
-　　　<p>※お手入れ方法について
-  <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a href="care.html">→こちらをクリック</a></p>
-
+    <div class="process-step">
+      <img src="images/step5.jpg" alt="step5">
+      <div class="caption">
+        <p class="story-num">Ⅴ</p>
+        <p class="story-sub-title">PREMIUM LEATHER</p>
+        <h3 class="story-main-title">極上レザー</h3>
+        <p class="story-description">極上のレザーなため、シワもできにくく、汚れもつきにくいです。水に濡れてもさっと乾いたタオルで拭いていただくだけで、お手入れはOKです。</p>
+        <a href="care.html" class="story-link">お手入れ方法について &rarr;</a>
+      </div>
     </div>
-  </div>
-</section>
 
- <head>
-  <meta charset="UTF-8">
-  <title>トップページ</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- Font Awesome CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
+  </section>
 
- <footer class="footer">
+  <!-- フッター -->
+  <footer class="footer">
     <img src="images/logo2.png" alt="ブランドロゴ">
     <p>&copy; 9.2 GOLF PRO</p>
-    
-    <a href="https://www.instagram.com/jp_9.2golfpro/" 
-       target="_blank" 
-       class="instagram-link">
+    <a href="https://www.instagram.com/jp_9.2golfpro/" target="_blank" class="instagram-link">
       <i class="fa-brands fa-instagram"></i>
     </a>
-</footer>
+  </footer>
 
-  <!-- JS -->
-  <script>
-    const menuToggle = document.getElementById("menu-toggle");
-    const navbar = document.getElementById("navbar");
-
-    menuToggle.addEventListener("click", () => {
-      navbar.classList.toggle("active");
-    });
-
-    // IntersectionObserver（process-stepアニメーション）
-    document.addEventListener("DOMContentLoaded", () => {
-      const steps = document.querySelectorAll(".process-step");
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.2 });
-      steps.forEach(step => observer.observe(step));
-    });
-
-    
-/* --- ここから追記：スクロールでふわっと出す --- */
-document.addEventListener("DOMContentLoaded", () => {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target); // 一度出たら監視終了（動作を軽くする）
-      }
-    });
-  }, { threshold: 0.1 });
-
-  // 監視対象：TOP専用のクラス ＋ 全ページ共通のクラス
-  const scrollTargets = document.querySelectorAll('.story-content img, .process-step img, .scroll-fade');
-  
-  scrollTargets.forEach(el => {
-    observer.observe(el);
-  });
-});
-/* --- 追記ここまで --- */
-
-  </script>
-
+  <!-- ★JSはここだけ★ -->
+  <script src="script.js"></script>
 
 </body>
 </html>
-
-<body>
- 
-
-  <!-- メインコンテンツ -->
-  <div id="main-content" style="display:none;">
-    <section class="hero">
-      <!-- ここにヒーローやコンテンツ -->
-    </section>
-    <!-- 他のセクション -->
-  </div>
-</body>
-
-
-
-
 
 
 
